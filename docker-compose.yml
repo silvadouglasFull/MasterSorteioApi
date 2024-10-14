@@ -40,7 +40,7 @@ services:
     environment:
       - PMA_ARBITRARY=1
       - PMA_HOST:db
-      - MYSQL_USERNAME:master
+      - MYSQL_USERNAME:${DB_USERNAME}
       - MYSQL_ROOT_PASSWORD:${DB_PASSWORD}
     networks:
       - master
