@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $form_id
  * @property string $form_doc
  * @property int|null $form_number
+ * @property string|null $form_email
  * @property Carbon $created_at
  * @property Carbon $updated_at
  * 
@@ -29,12 +30,14 @@ class Form extends Model
 	protected $primaryKey = 'form_id';
 
 	protected $casts = [
-		'form_number' => 'int'
+		'form_number' => 'int',
+		'form_email' => 'string',
 	];
 
 	protected $fillable = [
 		'form_doc',
-		'form_number'
+		'form_number',
+		'form_email',
 	];
 
 	public function awardeds()
