@@ -346,4 +346,29 @@ class arrayHandless
 
         return $result;
     }
+
+    /**
+     * Converts a number into an array of its digits.
+     *
+     * This function takes a number, converts it into a string, and then splits the string into an array 
+     * of its individual digits. Optionally, it converts each digit back to a number before returning the result.
+     *
+     * @param int|string $numero The number to be split into an array of digits. Can be an integer or a string.
+     * @return array An array where each element is a digit from the original number.
+     */
+    public function numberToArray($numero): array
+    {
+        try {
+            // Convert the number to a string and then split it into an array of individual characters
+            $digitosArray = str_split((string)$numero);
+
+            // Optional: Convert each character back to an integer
+            $resultado = array_map('intval', $digitosArray);
+
+            return $resultado;
+        } catch (\Throwable $th) {
+            Log::error($th);
+            return [];
+        }
+    }
 }
