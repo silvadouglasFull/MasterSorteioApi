@@ -172,7 +172,7 @@ class FormController extends Controller
                 "=",
                 "forms.form_id"
             )->count();
-            $numberToArray = $this->arrayHandless->numberToArray($count * 10);
+            $numberToArray = $this->arrayHandless->numberToArray($count * 7);
             $countNumberToArrayWithImg = array_map(function ($item) {
                 return [
                     "base64_number" => $this->fileManeger->fileToBase64("imagens/$item.png"),
