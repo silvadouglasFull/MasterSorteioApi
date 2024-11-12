@@ -95,7 +95,7 @@ class FormController extends Controller
             $rules = [
                 "form_doc" => "required|string|min:11|max:14",
                 "form_email" => "required|string|min:5|max:100",
-                "form_name" => "string|min:5|max:100",
+                "form_name" => "string|min:2|max:100",
                 "form_name_doc" => "string|min:5|max:100"
             ];
             if ($this->validate($request, $rules)) {
@@ -172,7 +172,7 @@ class FormController extends Controller
                 "=",
                 "forms.form_id"
             )->count();
-            $numberToArray = $this->arrayHandless->numberToArray($count);
+            $numberToArray = $this->arrayHandless->numberToArray($count * 10);
             $countNumberToArrayWithImg = array_map(function ($item) {
                 return [
                     "base64_number" => $this->fileManeger->fileToBase64("imagens/$item.png"),
@@ -180,7 +180,7 @@ class FormController extends Controller
                 ];
             }, $numberToArray);
             return $this->PersonResponse->returnResponseArray([
-                "count_forms" => $count,
+                "count_forms" => $count * 7,
                 "count_forms_numbers_with_img" => $countNumberToArrayWithImg,
             ]);
         } catch (\Throwable $th) {
