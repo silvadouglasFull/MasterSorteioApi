@@ -170,7 +170,7 @@ class FormController extends Controller
                 "=",
                 "forms.form_id"
             )->count();
-            $numberToArray = $this->arrayHandless->numberToArray(($count * 7) + 400);
+            $numberToArray = $this->arrayHandless->numberToArray(($count * 7));
             $countNumberToArrayWithImg = array_map(function ($item) {
                 return [
                     "base64_number" => $this->fileManeger->fileToBase64("imagens/$item.png"),
@@ -178,7 +178,7 @@ class FormController extends Controller
                 ];
             }, $numberToArray);
             return $this->PersonResponse->returnResponseArray([
-                "count_forms" => ($count * 7) + 400,
+                "count_forms" => ($count * 7),
                 "count_forms_numbers_with_img" => $countNumberToArrayWithImg,
             ]);
         } catch (\Throwable $th) {
