@@ -11,8 +11,6 @@ use App\Services\fileManeger;
 use App\Services\stringHandless;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\Storage;
 
 class FormController extends Controller
 {
