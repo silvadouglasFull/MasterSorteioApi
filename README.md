@@ -72,6 +72,7 @@ POST | /forms | Register a new user
 PUT | /forms/{id} | Update a user's entry
 DELETE | /forms/{id} | Delete a user record
 GET | /forms-count | Get total number of entries (with images)
+GET | /Awarded/wasAwarded | get the lucky user
 
 ### Example Payload for POST /forms
 
